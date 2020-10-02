@@ -2,65 +2,24 @@
 <html>
 	<head>
 		<title>ramona a</title>
+    <link href="main_style.css" rel="stylesheet" type="text/css" />
 	</head>
-	<body>
-		<style>
-			a:link {
-				color: green;
-				background-color: transparent;
-				text-decoration: none;
-			}
-
-			a:visited {
-				color: pink;
-				background-color: transparent;
-				text-decoration: none;
-			}
-
-			a:hover {
-				color: red;
-				background-color: transparent;
-				text-decoration: underline;
-			}
-
-			a:active {
-				color: yellow;
-				background-color: transparent;
-				text-decoration: underline;
-			}
-			#name {
-				display:block;
-				text-align:center;
-				margin:0 auto;
-				margin-top:40px;
-				margin-bottom:40px;
-				font-family:Trebuchet MS;
-				font-size:72px;
-				width:700px;
-				text-decoration:underline;
-			}
-			#links {
-				display:block;
-				text-align:center;
-				margin:0 auto;
-				margin-top:40px;
-				margin-bottom:40px;
-				font-family:Trebuchet MS;
-				font-size:20px;
-			}
-			#tableStyle {
-				margin-left: auto;
-				margin-right: auto;
-			}
-		</style>
-		<p id="name">hello!</p>
-		<p id="links">im a programmer & musician from ohio w/ a passion for audio synthesis</p>
-		<table id="tableStyle">
+	<body id="page">
+  
+    <div id="topBorder"></div>
+    <div id="bottomBorder"></div>
+    <div id="leftBorder"></div>
+    <div id="rightBorder"></div>
+    
+		<p class="name">ramona a</p>
+		<p class="text">programmer & musican from ohio with a passion for audio synthesis</p>
+    
+		<table id="linksTable">
 			<tr>
-				<td><a id="links" href="https://github.com/ramonauble">github</p></td>
-				<td><a id="links" href="https://www.linkedin.com/in/ramona-auble-998b3213b/">linkedin</p></td>
-				<td><a id="links" href="https://www.youtube.com/c/ramonaa">youtube</p></td>
-				<td><a id="links" href="https://www.instagram.com/ghostsax/">instagram</p></td>
+				<td><a class="links github" href="https://github.com/ramonauble">github</p></td>
+				<td><a class="links linkedin" href="https://www.linkedin.com/in/ramona-auble-998b3213b/">linkedin</p></td>
+				<td><a class="links youtube" href="https://www.youtube.com/c/ramonaa">youtube</p></td>
+				<td><a class="links instagram" href="https://www.instagram.com/ghostsax/">instagram</p></td>
 			</tr>
 		</table>
 	</body>

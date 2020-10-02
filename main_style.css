@@ -1,0 +1,134 @@
+a:link {
+	background-color: transparent;
+	text-decoration: none;
+}
+a:visited {
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+  a.github:link {
+    color:#283747;
+  }
+  a.github:visited {
+    color:#283747;
+  }
+  a.github:hover {
+    color:#2E4053;
+  }
+  a.github:active {
+    color:#5D6D7E;
+  }
+  
+  a.linkedin:link {
+    color:#1F618D;
+  }
+  a.linkedin:visited {
+    color:#1F618D;
+  }
+  a.linkedin:hover {
+    color:#2471A3;
+  }
+  a.linkedin:active {
+    color:#2980B9;
+  }
+  
+  a.youtube:link {
+    color:#922B21;
+  }
+  a.youtube:visited {
+    color:#922B21;
+  }
+  a.youtube:hover {
+    color:#A93226;
+  }
+  a.youtube:active {
+    color:#CD6155;
+  }
+  
+  a.instagram:link {
+    color:#633974;
+  }
+  a.instagram:visited {
+    color:#633974;
+  }
+  a.instagram:hover {
+    color:#76448A;
+  }
+  a.instagram:active {
+    color:#9B59B6;
+  }
+
+#page {
+  background-color: #D8B9D0;
+}
+
+#topBorder, #bottomBorder, #leftBorder, #rightBorder {
+  background: #604559;
+  position: fixed;
+}
+  #topBorder, #bottomBorder {
+    left: 0;
+    right: 0;
+    height: 15px
+  }
+    #topBorder {
+      top: 0;
+    }
+    #bottomBorder {
+      bottom: 0;
+    }
+  #leftBorder, #rightBorder {
+    top: 0;
+    bottom: 0;
+    width: 15px
+  }
+    #leftBorder {
+      left: 0;
+    }
+    #rightBorder {
+      right: 0;
+    }
+
+.name {
+  display:block;
+  text-align:center;
+  margin:0 auto;
+  margin-top:40px;
+  margin-bottom:40px;
+  font-family:Trebuchet MS;
+  font-size:72px;
+  width:700px;
+  text-decoration:underline;
+}
+.links {
+  display:block;
+  text-align:center;
+  margin:0 auto;
+  margin-top:40px;
+  margin-bottom:40px;
+  font-family:Trebuchet MS;
+  font-size:20px;
+}
+.text {
+  display:block;
+  text-align:center;
+  margin:0 auto;
+  margin-top:80px;
+  margin-bottom:40px;
+  font-family:Trebuchet MS;
+  font-size:20px;
+}
+  
+#linksTable {
+  margin-left: auto;
+  margin-right: auto;
+}
