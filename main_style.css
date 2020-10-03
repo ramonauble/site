@@ -1,20 +1,46 @@
+.pageBorder {
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+}
+  .outer {
+    position:fixed;
+    border-style:solid;
+    border-width:15px;
+    border-color:#604559;
+  }
+  .middle {
+    position:absolute;
+    border-style:solid;
+    border-width:10px;
+    border-color:#966F8B;
+    background-color:#BB94B0;
+  }
+  .inner {
+    position:absolute;
+    border-style:solid;
+    border-width:5px;
+    border-color:#BB94B0;
+    background-color:#D8B9D0;
+  }
+
 a:link {
-	background-color: transparent;
-	text-decoration: none;
+	background-color:transparent;
+	text-decoration:none;
 }
 a:visited {
-  background-color: transparent;
-  text-decoration: none;
+  background-color:transparent;
+  text-decoration:none;
 }
 a:hover {
-  background-color: transparent;
-  text-decoration: underline;
+  background-color:transparent;
+  text-decoration:underline;
 }
 a:active {
-  background-color: transparent;
-  text-decoration: underline;
+  background-color:transparent;
+  text-decoration:underline;
 }
-
   a.github:link {
     color:#283747;
   }
@@ -67,68 +93,31 @@ a:active {
     color:#9B59B6;
   }
 
-#page {
-  background-color: #D8B9D0;
-}
-
-#topBorder, #bottomBorder, #leftBorder, #rightBorder {
-  background: #604559;
-  position: fixed;
-}
-  #topBorder, #bottomBorder {
-    left: 0;
-    right: 0;
-    height: 15px
-  }
-    #topBorder {
-      top: 0;
-    }
-    #bottomBorder {
-      bottom: 0;
-    }
-  #leftBorder, #rightBorder {
-    top: 0;
-    bottom: 0;
-    width: 15px
-  }
-    #leftBorder {
-      left: 0;
-    }
-    #rightBorder {
-      right: 0;
-    }
-
 .name {
-  display:block;
   text-align:center;
-  margin:0 auto;
-  margin-top:40px;
-  margin-bottom:40px;
-  font-family:Trebuchet MS;
+  margin:20px auto 20px;
+  font-family:monospace;
   font-size:72px;
   width:700px;
   text-decoration:underline;
 }
+.text {
+  text-align:center;
+  margin:40px auto 40px;
+  font-family:monospace;
+  font-size:20px;
+}
 .links {
   display:block;
   text-align:center;
-  margin:0 auto;
-  margin-top:40px;
-  margin-bottom:40px;
-  font-family:Trebuchet MS;
+  margin:15px 15px;
+  font-family:monospace;
   font-size:20px;
 }
-.text {
-  display:block;
-  text-align:center;
-  margin:0 auto;
-  margin-top:80px;
-  margin-bottom:40px;
-  font-family:Trebuchet MS;
-  font-size:20px;
-}
-  
+
 #linksTable {
-  margin-left: auto;
-  margin-right: auto;
+  background-color:#EED0E6;
+  margin:60px auto;
+  border-style:dotted;
+  border-color:#604559;
 }
