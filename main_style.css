@@ -95,7 +95,7 @@ a:active {
 
 .name {
   text-align:center;
-  margin:20px auto 20px;
+  margin:20px auto 15px;
   font-family:monospace;
   font-size:72px;
   width:700px;
@@ -103,21 +103,21 @@ a:active {
 }
 .text {
   text-align:center;
-  margin:40px auto 40px;
-  font-family:monospace;
-  font-size:20px;
-}
-.links {
-  display:block;
-  text-align:center;
-  margin:15px 15px;
+  margin:5px auto 30px;
   font-family:monospace;
   font-size:20px;
 }
 
-#linksTable {
+.linksTable {
   background-color:#EED0E6;
-  margin:60px auto;
+  margin:30px auto;
   border-style:dotted;
   border-color:#604559;
+}
+.linksData {
+  padding:5px;
+}
+.links {
+  font-family:monospace;
+  font-size:20px;
 }
