@@ -97,14 +97,14 @@ a:active {
   text-align:center;
   margin:20px auto 15px;
   font-family:monospace;
-  font-size:9vw;
+  font-size:6rem;
   text-decoration:underline;
 }
 .text {
   text-align:center;
   margin:5px auto 30px;
   font-family:monospace;
-  font-size:2vw;
+  font-size:1.5rem;
 }
 
 .linksTable {
@@ -120,6 +120,6 @@ a:active {
 }
 .links {
   font-family:monospace;
-  font-size:2vw;
+  font-size:1.5rem;
   text-align:center;
 }
