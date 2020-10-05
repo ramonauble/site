@@ -97,15 +97,14 @@ a:active {
   text-align:center;
   margin:20px auto 15px;
   font-family:monospace;
-  font-size:72px;
-  width:700px;
+  font-size:9vw;
   text-decoration:underline;
 }
 .text {
   text-align:center;
   margin:5px auto 30px;
   font-family:monospace;
-  font-size:20px;
+  font-size:2vw;
 }
 
 .linksTable {
@@ -113,11 +112,14 @@ a:active {
   margin:30px auto;
   border-style:dotted;
   border-color:#604559;
+  width:36%;
+  text-align:center;
 }
 .linksData {
   padding:5px;
 }
 .links {
   font-family:monospace;
-  font-size:20px;
+  font-size:2vw;
+  text-align:center;
 }
