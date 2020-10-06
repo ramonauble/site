@@ -1,3 +1,7 @@
+body {
+  font-size:100%;
+}
+
 .pageBorder {
   left:0;
   right:0;
@@ -96,32 +100,36 @@ a:active {
 
 .name {
   text-align:center;
-  margin:1rem auto 1.2rem;
+  margin:.05em auto .1em;
   font-family:monospace;
-  font-size:5.8rem;
+  font-size:5.5em;
   text-decoration:underline;
 }
 .text {
   text-align:center;
-  margin:.6rem auto 1rem;
+  margin:.1em auto .5em;
   font-family:monospace;
-  font-size:1.2rem;
+  font-size:1.25em;
 }
 
-.linksTable {
-  display:block;
+.linksDiv {
+  position:absolute;
+  left:3%;
+  right:3%;
+  text-align:center;
+  margin:.5em auto;
   background-color:#EED0E6;
-  margin:1.5rem auto;
   border-style:dotted;
   border-color:#604559;
-  width:18rem;
+  max-width:16em;
 }
 .linksData {
   display:inline-block;
-  padding:.3rem;
+  margin:0 auto;
+  padding:.3em .05em;
 }
 .links {
   font-family:monospace;
-  font-size:1.1rem;
+  font-size:1em;
   text-align:center;
 }
