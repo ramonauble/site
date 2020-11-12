@@ -2,25 +2,43 @@
 
 $(document).ready(function() {
   resize();
+  var $activeSect = $("#about");
+  var $infoDivDict = {
+    about: $(aboutDiv),
+    works: $(worksDiv),
+    links: $(linksDiv)
+  };
+  $activeSect.css("border-bottom", "2px solid black");
+
   $(".sect").mouseenter(function() {
-    $(this).stop();
+    $(this).stop(true, true);
     $(this).animate({
-      backgroundColor: "#BB94B0"}, 54);
+      backgroundColor: "#BB94B0"}, 72);
   })
   .mouseleave(function() {
-    $(this).stop();
+    $(this).stop(true, true);
     $(this).animate({
-      backgroundColor: "#EED0E6"}, 54);
+      backgroundColor: "#EED0E6"}, 72);
   })
   .mousedown(function() {
-    $(this).stop();
+    $(this).stop(true, true);
     $(this).animate({
-      backgroundColor: "#966F8B"}, 54);
+      backgroundColor: "#966F8B"}, 63);
   })
   .mouseup(function() {
-    $(this).stop();
-    $(this).animate({
-      backgroundColor: "#BB94B0"}, 54);
+    $(this).stop(true, true);
+    if($(this).attr("id") != $activeSect.attr("id")) {
+      $activeSect.css("border-bottom", "none");
+      let toHide = $activeSect.attr("id");
+      $activeSect = $(this);
+      $infoDivDict[toHide].fadeOut(72, function() {
+        $activeSect.css("border-bottom", "2px solid black");
+        let toShow = $activeSect.attr("id");
+        $infoDivDict[toShow].fadeIn(72);
+      });
+    }
+    $activeSect.animate({
+      backgroundColor: "#BB94B0"}, 63);
   });
 });
 
@@ -45,4 +63,7 @@ function resize() {
               .css("margin", "0 auto");
 
   $(".sect").css("width", parseInt(titleWidth)/3.5);
+
+  $(".infoDiv").css("width", parseInt(titleWidth)*(6/7))
+              .css("margin", "0 auto");
 }

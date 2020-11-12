@@ -57,6 +57,24 @@ body {
   background:#EED0E6;
 }
 
+#aboutDiv {
+  display:block;
+  margin:0 auto;
+  background:#EED0E6;
+}
+
+#worksDiv {
+  display:none;
+  margin:0 auto;
+  background:#EED0E6;
+}
+
+#linksDiv {
+  display:none;
+  margin:0 auto;
+  background:#EED0E6;
+}
+
 /*not used
 .text {
   text-align:center;
