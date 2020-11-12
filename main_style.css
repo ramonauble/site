@@ -11,24 +11,78 @@ body {
   .outer {
     position:fixed;
     border-style:solid;
-    border-width:15px;
+    border-width:6px;
     border-color:#604559;
     background-color:#966F8B;
   }
   .middle {
     position:absolute;
     border-style:solid;
-    border-width:10px;
+    border-width:3px;
     border-color:#966F8B;
     background-color:#BB94B0;
   }
   .inner {
     position:absolute;
     border-style:solid;
-    border-width:5px;
+    border-width:2px;
     border-color:#BB94B0;
     background-color:#D8B9D0;
+    text-align:center;
+    overflow:auto;
   }
+
+.name {
+  display:block;
+  text-align:center;
+  margin:0 auto;
+  font-family:monospace;
+}
+
+.sectDiv {
+  text-align:center;
+  margin:0 auto;
+}
+
+.sect {
+  display:inline-block;
+  font-family:monospace;
+  margin:0 auto;
+  background:#EED0E6;
+  user-select:none;
+}
+
+#accentCanv {
+  height:9px;
+  background:#EED0E6;
+}
+
+/*not used
+.text {
+  text-align:center;
+  margin:.1em auto .5em;
+  font-family:monospace;
+  font-size:1.25em;
+  font-weight:54.0;
+}
+.linksDiv {
+  text-align:center;
+  margin:.25em auto;
+  background-color:#EED0E6;
+  border-style:dotted;
+  border-color:#604559;
+  max-width:16em;
+}
+.linksData {
+  display:inline-block;
+  margin:0 auto;
+  padding:.3em .05em;
+}
+.links {
+  font-family:monospace;
+  font-size:1em;
+  text-align:center;
+}
 
 a:link {
 	background-color:transparent;
@@ -58,7 +112,7 @@ a:active {
   a.github:active {
     color:#5D6D7E;
   }
-  
+
   a.linkedin:link {
     color:#1F618D;
   }
@@ -71,7 +125,7 @@ a:active {
   a.linkedin:active {
     color:#2980B9;
   }
-  
+
   a.youtube:link {
     color:#922B21;
   }
@@ -84,7 +138,7 @@ a:active {
   a.youtube:active {
     color:#CD6155;
   }
-  
+
   a.instagram:link {
     color:#633974;
   }
@@ -97,39 +151,4 @@ a:active {
   a.instagram:active {
     color:#9B59B6;
   }
-
-.name {
-  text-align:center;
-  margin:.05em auto .1em;
-  font-family:monospace;
-  font-size:5.5em;
-  text-decoration:underline;
-}
-.text {
-  text-align:center;
-  margin:.1em auto .5em;
-  font-family:monospace;
-  font-size:1.25em;
-}
-
-.linksDiv {
-  position:absolute;
-  left:3%;
-  right:3%;
-  text-align:center;
-  margin:.5em auto;
-  background-color:#EED0E6;
-  border-style:dotted;
-  border-color:#604559;
-  max-width:16em;
-}
-.linksData {
-  display:inline-block;
-  margin:0 auto;
-  padding:.3em .05em;
-}
-.links {
-  font-family:monospace;
-  font-size:1em;
-  text-align:center;
-}
+*/
