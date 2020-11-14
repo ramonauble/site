@@ -9,16 +9,16 @@ $(document).ready(function() {
     links: $(linksDiv)
   };
   $activeSect.css("border-bottom", "2px solid black");
+  $infoDivDict["about"].fadeIn(63);
 
   $(".sect").mouseenter(function() {
     $(this).stop(true, true);
     $(this).animate({
-      backgroundColor: "#BB94B0"}, 72);
+      backgroundColor: "#BB94B0"}, 63);
   })
   .mouseleave(function() {
-    $(this).stop(true, true);
     $(this).animate({
-      backgroundColor: "#EED0E6"}, 72);
+      backgroundColor: "#EED0E6"}, 63);
   })
   .mousedown(function() {
     $(this).stop(true, true);
@@ -31,10 +31,10 @@ $(document).ready(function() {
       $activeSect.css("border-bottom", "none");
       let toHide = $activeSect.attr("id");
       $activeSect = $(this);
-      $infoDivDict[toHide].fadeOut(72, function() {
+      $infoDivDict[toHide].fadeOut(63, function() {
         $activeSect.css("border-bottom", "2px solid black");
         let toShow = $activeSect.attr("id");
-        $infoDivDict[toShow].fadeIn(72);
+        $infoDivDict[toShow].fadeIn(63);
       });
     }
     $activeSect.animate({
@@ -48,8 +48,9 @@ $(window).resize(function() {
 
 function resize() {
   let titleWidth = (window.innerWidth/2) + "px";
-  let titleHeight = (parseInt(titleWidth)/6) + "px";
-  let titleFontSize = (parseInt(titleWidth)/6) + "px";
+  let titleWidthInt = parseInt(titleWidth);
+  let titleHeight = (titleWidthInt/6) + "px";
+  let titleFontSize = (titleWidthInt/6) + "px";
 
   $(".name").css("width", titleWidth)
             .css("height", titleHeight)
@@ -62,8 +63,11 @@ function resize() {
   $("#sectDiv").css("width", titleWidth)
               .css("margin", "0 auto");
 
-  $(".sect").css("width", parseInt(titleWidth)/3.5);
+  $(".sect").css("width", titleWidthInt/3.5);
 
-  $(".infoDiv").css("width", parseInt(titleWidth)*(6/7))
+  $(".infoDiv").css("width", titleWidthInt*(6/7))
               .css("margin", "0 auto");
+
+  $(".headerP").css("font-size", (titleWidthInt/21.5) + "px");
+  $(".contentP").css("font-size", (titleWidthInt/23.5) + "px")
 }

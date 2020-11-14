@@ -39,12 +39,20 @@ body {
   font-family:monospace;
 }
 
+#accentCanv {
+  border-radius:1.5px;
+  height:9px;
+  background:#EED0E6;
+}
+
 .sectDiv {
   text-align:center;
   margin:0 auto;
 }
-
 .sect {
+  border-radius:3px;
+  padding:3px 0px;
+  box-sizing:border-box;
   display:inline-block;
   font-family:monospace;
   margin:0 auto;
@@ -52,121 +60,28 @@ body {
   user-select:none;
 }
 
-#accentCanv {
-  height:9px;
-  background:#EED0E6;
-}
-
-#aboutDiv {
-  display:block;
-  margin:0 auto;
-  background:#EED0E6;
-}
-
-#worksDiv {
+.infoDiv {
+  border-radius:6px;
+  box-sizing:border-box;
   display:none;
   margin:0 auto;
   background:#EED0E6;
 }
-
-#linksDiv {
-  display:none;
-  margin:0 auto;
-  background:#EED0E6;
+.pDiv {
+  box-sizing:border-box;
+  padding-left:6px;
+  padding-right:6px;
 }
-
-/*not used
-.text {
-  text-align:center;
-  margin:.1em auto .5em;
+.headerP, .contentP {
   font-family:monospace;
-  font-size:1.25em;
-  font-weight:54.0;
 }
-.linksDiv {
-  text-align:center;
-  margin:.25em auto;
-  background-color:#EED0E6;
-  border-style:dotted;
-  border-color:#604559;
-  max-width:16em;
-}
-.linksData {
-  display:inline-block;
-  margin:0 auto;
-  padding:.3em .05em;
-}
-.links {
-  font-family:monospace;
-  font-size:1em;
-  text-align:center;
-}
-
-a:link {
-	background-color:transparent;
-	text-decoration:none;
-}
-a:visited {
-  background-color:transparent;
-  text-decoration:none;
-}
-a:hover {
-  background-color:transparent;
-  text-decoration:underline;
-}
-a:active {
-  background-color:transparent;
-  text-decoration:underline;
-}
-  a.github:link {
-    color:#283747;
+  #titleP {
+    border-radius:6px 6px 0px 0px;
+    background-color:#cfabc5;
+    padding:6px 0px 6px;
+    font-size:15px;
+    border-bottom:1px dotted black;
   }
-  a.github:visited {
-    color:#283747;
+  #aboutP {
+    padding:0px 0px 12px;
   }
-  a.github:hover {
-    color:#2E4053;
-  }
-  a.github:active {
-    color:#5D6D7E;
-  }
-
-  a.linkedin:link {
-    color:#1F618D;
-  }
-  a.linkedin:visited {
-    color:#1F618D;
-  }
-  a.linkedin:hover {
-    color:#2471A3;
-  }
-  a.linkedin:active {
-    color:#2980B9;
-  }
-
-  a.youtube:link {
-    color:#922B21;
-  }
-  a.youtube:visited {
-    color:#922B21;
-  }
-  a.youtube:hover {
-    color:#A93226;
-  }
-  a.youtube:active {
-    color:#CD6155;
-  }
-
-  a.instagram:link {
-    color:#633974;
-  }
-  a.instagram:visited {
-    color:#633974;
-  }
-  a.instagram:hover {
-    color:#76448A;
-  }
-  a.instagram:active {
-    color:#9B59B6;
-  }
-*/
