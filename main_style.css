@@ -67,48 +67,50 @@ body {
   margin:0 auto;
   background:#EED0E6;
 }
-.pDiv {
-  box-sizing:border-box;
-  padding-left:6px;
-  padding-right:6px;
-}
-.headerP, .contentP {
-  font-family:monospace;
-  font-weight:111;
-}
-  #titleP {
-    border-radius:6px 6px 0px 0px;
+  .hDiv {
     background-color:#cfabc5;
-    padding:6px 0px 6px;
-    font-size:15px;
-    border-bottom:1px dotted black;
+    margin:0 auto;
   }
-  #aboutP {
-    padding:0px 0px 12px;
+  .pDiv {
+    box-sizing:border-box;
+    padding-left:6px;
+    padding-right:6px;
+    margin:0 auto;
   }
-    #html, #css, #javascript, #jquery,
-    #gpu, #workers, #audio, #webgl {
-      font-weight:666;
+    .headerP, .contentP {
+      font-family:monospace;
+      font-weight:111;
     }
-    #html, #webgl {
-      color:#966F8B;
+    .headerP {
+      padding:6px 0px 6px;
+      font-size:15px;
+      border-bottom:1px dotted black;
     }
-    #css, #audio {
-      color:#968E6F;
+    #intro {
+      border-radius:6px 6px 0px 0px;
     }
-    #javascript, #workers {
-      color:#6F967A;
+    #aboutP {
+      padding:0px 0px 0px;
     }
-    #jquery, #gpu {
-      color:#6F7896;
-    }
-    #jqui {
-      text-decoration:underline;
-    }
-    #vue {
-      text-decoration:underline;
-    }
-    #divider {
-      font-weight:1000;
-      line-height:2.67em;
-    }
+      #html, #css, #javascript, #jquery,
+      #gpu, #workers, #audio, #webgl {
+        font-weight:666;
+      }
+      #html, #webgl {
+        color:#966F8B;
+      }
+      #css, #audio {
+        color:#968E6F;
+      }
+      #javascript, #workers {
+        color:#6F967A;
+      }
+      #jquery, #gpu {
+        color:#6F7896;
+      }
+      #jqui, #vue {
+        text-decoration:underline;
+      }
+      #divider {
+        font-weight:1000;
+      }
