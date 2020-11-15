@@ -69,5 +69,5 @@ function resize() {
               .css("margin", "0 auto");
 
   $(".headerP").css("font-size", (titleWidthInt/21.5) + "px");
-  $(".contentP").css("font-size", (titleWidthInt/23.5) + "px")
+  $(".contentP").css("font-size", (titleWidthInt/29.5) + "px")
 }
