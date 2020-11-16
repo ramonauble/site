@@ -67,11 +67,11 @@ body {
   margin:0 auto;
   background:#EED0E6;
 }
-  .hDiv {
+  .subSect {
     background-color:#cfabc5;
     margin:0 auto;
   }
-  .pDiv {
+  .subSectC {
     box-sizing:border-box;
     padding-left:6px;
     padding-right:6px;

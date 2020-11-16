@@ -4,10 +4,9 @@ $(document).ready(function() {
   //size UI elements dynamically on page load
   resize();
 
-  //initialize active section & define object
-  //of key-value pairs for section selection
+  //initialize active section
   var $activeSect = $("#about");
-  var $infoDivDict = {
+  var $sectDivDict = {
     about: $("#aboutDiv"),
     works: $("#worksDiv"),
     links: $("#linksDiv")
@@ -16,96 +15,82 @@ $(document).ready(function() {
   //underline selected section &
   //fade in selected container
   $activeSect.css("border-bottom", "2px solid black");
-  $infoDivDict["about"].fadeIn(63);
+  $sectDivDict["about"].fadeIn(63);
 
-  //initialize active subsection & define object
-  //of key-value pairs for subsection selection
+  //initialize active subsection
   var $activeSubSect = $("#intro");
   var $subSectDivDict = {
     intro: $("#introDiv"),
     skills: $("#skillsDiv")
   };
 
+  $(".subSectC").hide();
+  $subSectDivDict[$activeSubSect.attr("id")].show();
+
 //────────────────────────────────────────────────
 //configure event handlers for section selection
 //────────────────────────────────────────────────
   //stop queued animations & animate bg color of
-  //most recently entered section element
-  $(".sect").mouseenter(function() {
-    $(this).stop(true, true);
-    $(this).animate({
+  //most recently entered element
+  $(".sect, .subSect").mouseenter(function() {
+    let $this = $(this);
+    $this.stop(true, true);
+    $this.animate({
       backgroundColor: "#BB94B0"}, 63);
   })
-  //animate background color of most recently
-  //exited section element
+  //stop queued animations & animate bg color of
+  //most recently exited element
   .mouseleave(function() {
-    $(this).animate({
-      backgroundColor: "#EED0E6"}, 63);
+    let $this = $(this);
+    $this.stop(true, true);
+    if($this.hasClass("sect")) {
+      $this.animate({
+        backgroundColor: "#EED0E6"}, 63);
+    } else {
+      $this.animate({
+        backgroundColor: "#cfabc5"}, 63);
+    }
   })
   //stop queued animations & animate bg color of
-  //clicked element
+  //most recently clicked element
   .mousedown(function() {
-    $(this).stop(true, true);
-    $(this).animate({
+    let $this = $(this);
+    $this.stop(true, true);
+    $this.animate({
       backgroundColor: "#966F8B"}, 63);
   })
-  //stop queued animations & begin callback sequence
-  //to animate between sections
+  //stop queued animations
   .mouseup(function() {
-    $(this).stop(true, true);
-    if($(this).attr("id") != $activeSect.attr("id")) {
-      $activeSect.css("border-bottom", "none");
-      let toHide = $activeSect.attr("id");
-      $activeSect = $(this);
-      $infoDivDict[toHide].fadeOut(63, function() {
-        $activeSect.css("border-bottom", "2px solid black");
-        let toShow = $activeSect.attr("id");
-        $infoDivDict[toShow].fadeIn(63);
-      });
+    let $this = $(this);
+    if($this.hasClass("sect")) {
+      if($this.attr("id") != $activeSect.attr("id")) {
+        $activeSect.css("border-bottom", "none");
+        let $toHide = $sectDivDict[$activeSect.attr("id")];
+        $activeSect = $this;
+        $toHide.fadeOut(63, function() {
+          $activeSect.css("border-bottom", "2px solid black");
+          let $toShow = $sectDivDict[$activeSect.attr("id")];
+          $toShow.fadeIn(63);
+        });
+      }
+      $(this).stop(true, true);
+      //animate bg color of newly deselected element
+      $activeSect.animate({
+        backgroundColor: "#BB94B0"}, 63);
+    } else {
+      if($this.attr("id") != $activeSubSect.attr("id")) {
+        let $toHide = $subSectDivDict[$activeSubSect.attr("id")];
+        $activeSubSect = $this;
+        $toHide.slideUp(63, function() {
+          let $toShow = $subSectDivDict[$activeSubSect.attr("id")];
+          $toShow.slideDown(63);
+        });
+      }
+      $(this).stop(true, true);
+      //animate bg color of newly deselected element
+      $activeSubSect.animate({
+        backgroundColor: "#CFABC5"}, 63);
     }
-    //animate bg color of most newly deselected element
-    $activeSect.animate({
-      backgroundColor: "#BB94B0"}, 63);
-  });
-
-//────────────────────────────────────────────────
-//configure event handlers for subsection selection
-//────────────────────────────────────────────────
-  //stop queued animations & animate bg color of
-  //most recently entered subsection element
-  $(".hDiv").mouseenter(function() {
-    $(this).stop(true, true);
-    $(this).animate({
-      backgroundColor: "#BB94B0"}, 63);
-  })
-  //animate background color of most recently
-  //exited subsection element
-  .mouseleave(function() {
-    $(this).animate({
-      backgroundColor: "#cfabc5"}, 63);
-  })
-  //stop queued animations & animate bg color of
-  //selected element
-  .mousedown(function() {
-    $(this).stop(true, true);
-    $(this).animate({
-      backgroundColor: "#966F8B"}, 63);
-  })
-  //stop queued animations & begin callback sequence
-  //to animate between subSections
-  .mouseup(function() {
-    $(this).stop(true, true);
-    if($(this).attr("id") != $activeSubSect.attr("id")) {
-      let toHide = $activeSubSect.attr("id");
-      $activeSubSect = $(this);
-      $subSectDivDict[toHide].slideUp(63, function() {
-        let toShow = $activeSubSect.attr("id");
-        $subSectDivDict[toShow].slideDown(63);
-      });
-    }
-    //animate bg color of newly deselected element
-    $activeSubSect.animate({
-      backgroundColor: "#BB94B0"}, 63);
   });
 });
 
