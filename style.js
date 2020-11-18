@@ -2,8 +2,6 @@
 
 $(document).ready(function() {
   //size UI elements dynamically on page load
-  resize();
-
   //initialize active section
   var $activeSect = $("#about");
   var $sectDivDict = {
@@ -23,9 +21,11 @@ $(document).ready(function() {
     intro: $("#introDiv"),
     skills: $("#skillsDiv")
   };
-
+  $activeSubSect.toggleClass("active");
   $(".subSectC").hide();
   $subSectDivDict[$activeSubSect.attr("id")].show();
+
+  resize();
 
 //────────────────────────────────────────────────
 //configure event handlers for section selection
@@ -80,7 +80,10 @@ $(document).ready(function() {
     } else {
       if($this.attr("id") != $activeSubSect.attr("id")) {
         let $toHide = $subSectDivDict[$activeSubSect.attr("id")];
+        $activeSubSect.toggleClass("active"); //remove
         $activeSubSect = $this;
+        $activeSubSect.toggleClass("active"); //add
+        resize();
         $toHide.slideUp(63, function() {
           let $toShow = $subSectDivDict[$activeSubSect.attr("id")];
           $toShow.slideDown(63);
@@ -102,10 +105,12 @@ $(window).resize(function() {
 //element sizing
 function resize() {
   //define new base sizes per new window width
-  let titleWidth = (window.innerWidth/2) + "px";
+  let titleWidth = (window.innerWidth/1.42) + "px";
   let titleWidthInt = parseInt(titleWidth);
-  let titleHeight = (titleWidthInt/6) + "px";
-  let titleFontSize = (titleWidthInt/6) + "px";
+  let titleHeight = (titleWidthInt/9.5) + "px";
+  let titleFontSize = (titleWidthInt/8) + "px";
+  let subSectFontShow = (titleWidthInt/27.5) + "px";
+  let subSectFontHide = (titleWidthInt/33.5) + "px";
 
   //resize name
   $(".name").css("width", titleWidth)
@@ -115,22 +120,30 @@ function resize() {
             .css("margin", "2px auto 0px");
 
   //resize accent canvas
-  $("#accentCanv").css("width", titleWidth);
+  $("#accentCanv").css("width", parseInt(titleWidth)/1.145);
 
   //resize section selection div
   $("#sectDiv").css("width", titleWidth)
               .css("margin", "0 auto 6px");
 
   //resize section selectors
-  $(".sect").css("width", titleWidthInt/3.5);
+  $(".sect").css("width", titleWidthInt/3.5)
+            .css("font-size", titleWidthInt/33.5);
 
   //resize selected content container
   $(".infoDiv").css("width", titleWidthInt*(6/7))
               .css("margin", "0 auto");
 
   //resize content within container
-  $(".headerP").css("font-size", (titleWidthInt/21.5) + "px")
-              .css("margin", "0 auto");
-  $(".contentP").css("font-size", (titleWidthInt/29.5) + "px")
+  $(".headerP").each(function() {
+    if ($(this).parent().hasClass("active")) {
+      $(this).css("font-size", subSectFontShow)
+                  .css("margin", "0 auto");
+    } else {
+      $(this).css("font-size", subSectFontHide)
+                  .css("margin", "0 auto");
+    }
+  });
+  $(".contentP").css("font-size", (titleWidthInt/32.5) + "px")
               .css("margin", "0 auto");
 }
