@@ -84,7 +84,6 @@ body {
     .headerP {
       padding:6px 0px 6px;
       font-size:15px;
-      border-bottom:1px dotted black;
     }
     #intro {
       border-radius:6px 6px 0px 0px;
@@ -109,7 +108,7 @@ body {
         color:#6F7896;
       }
       #jqui, #vue {
-        text-decoration:underline;
+        font-weight:666;
       }
       #divider {
         font-weight:1000;

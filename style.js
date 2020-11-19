@@ -19,7 +19,8 @@ $(document).ready(function() {
   var $activeSubSect = $("#intro");
   var $subSectDivDict = {
     intro: $("#introDiv"),
-    skills: $("#skillsDiv")
+    skills: $("#skillsDiv"),
+    interests: $("#interestsDiv")
   };
   $activeSubSect.toggleClass("active");
   $(".subSectC").hide();
@@ -80,11 +81,11 @@ $(document).ready(function() {
     } else {
       if($this.attr("id") != $activeSubSect.attr("id")) {
         let $toHide = $subSectDivDict[$activeSubSect.attr("id")];
-        $activeSubSect.toggleClass("active"); //remove
+        $activeSubSect.toggleClass("active"); //remove from old
         $activeSubSect = $this;
-        $activeSubSect.toggleClass("active"); //add
-        resize();
+        $activeSubSect.toggleClass("active"); //add to new
         $toHide.slideUp(63, function() {
+          resizeFonts();
           let $toShow = $subSectDivDict[$activeSubSect.attr("id")];
           $toShow.slideDown(63);
         });
@@ -124,7 +125,7 @@ function resize() {
 
   //resize section selection div
   $("#sectDiv").css("width", titleWidth)
-              .css("margin", "0 auto 6px");
+              .css("margin", "0 auto");
 
   //resize section selectors
   $(".sect").css("width", titleWidthInt/3.5)
@@ -135,15 +136,26 @@ function resize() {
               .css("margin", "0 auto");
 
   //resize content within container
+  resizeFonts();
+  $(".contentP").css("font-size", (titleWidthInt/32.5) + "px")
+              .css("margin", "0 auto");
+}
+
+function resizeFonts() {
+  let titleWidth = (window.innerWidth/1.42);
+  let subSectFontShow = (titleWidth/27.5);
+  let subSectFontHide = (titleWidth/35.5);
   $(".headerP").each(function() {
     if ($(this).parent().hasClass("active")) {
-      $(this).css("font-size", subSectFontShow)
+      $(this).css("font-size", (subSectFontShow + "px"))
+                  .css("margin", "0 auto");
+      $(this).parent().css("height", ((subSectFontShow + 12) + "px"))
                   .css("margin", "0 auto");
     } else {
-      $(this).css("font-size", subSectFontHide)
+      $(this).css("font-size", (subSectFontHide + "px"))
+                  .css("margin", "0 auto");
+      $(this).parent().css("height", ((subSectFontHide + 12) + "px"))
                   .css("margin", "0 auto");
     }
   });
-  $(".contentP").css("font-size", (titleWidthInt/32.5) + "px")
-              .css("margin", "0 auto");
 }
