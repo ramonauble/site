@@ -85,8 +85,11 @@ body {
       padding:6px 0px 6px;
       font-size:15px;
     }
-    #intro {
+    .subSect:first-child {
       border-radius:6px 6px 0px 0px;
+    }
+    .subSect:nth-last-child(2) {
+      border-radius:0px 0px 6px 6px;
     }
     #aboutP {
       padding:0px 0px 0px;

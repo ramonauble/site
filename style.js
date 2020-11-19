@@ -20,7 +20,8 @@ $(document).ready(function() {
   var $subSectDivDict = {
     intro: $("#introDiv"),
     skills: $("#skillsDiv"),
-    interests: $("#interestsDiv")
+    interests: $("#interestsDiv"),
+    webDesign: $("#webDesignDiv")
   };
   $activeSubSect.toggleClass("active");
   $(".subSectC").hide();
@@ -68,10 +69,25 @@ $(document).ready(function() {
         $activeSect.css("border-bottom", "none");
         let $toHide = $sectDivDict[$activeSect.attr("id")];
         $activeSect = $this;
+        let $toHideSS = $subSectDivDict[$activeSubSect.attr("id")];
+        $activeSubSect.toggleClass("active"); //remove from old
+        if ($activeSect.attr("id") == "about") {
+          $activeSubSect = $("#intro");
+        } else if ($activeSect.attr("id") == "works") {
+          $activeSubSect = $("#webDesign");
+        } else {
+          $activeSubSect = null;
+          //links - add later
+        }
+        $activeSubSect.toggleClass("active"); //add to new
         $toHide.fadeOut(63, function() {
+          $toHideSS.hide();
           $activeSect.css("border-bottom", "2px solid black");
           let $toShow = $sectDivDict[$activeSect.attr("id")];
-          $toShow.fadeIn(63);
+          let $toShowSS = $subSectDivDict[$activeSubSect.attr("id")];
+          $toShow.fadeIn(63, function() {
+            $toShowSS.slideDown(63);
+          });
         });
       }
       $(this).stop(true, true);
