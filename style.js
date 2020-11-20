@@ -21,7 +21,8 @@ $(document).ready(function() {
     intro: $("#introDiv"),
     skills: $("#skillsDiv"),
     interests: $("#interestsDiv"),
-    webDesign: $("#webDesignDiv")
+    webDesign: $("#webDesignDiv"),
+    social: $("#socialDiv")
   };
   $activeSubSect.toggleClass("active");
   $(".subSectC").hide();
@@ -76,8 +77,7 @@ $(document).ready(function() {
         } else if ($activeSect.attr("id") == "works") {
           $activeSubSect = $("#webDesign");
         } else {
-          $activeSubSect = null;
-          //links - add later
+          $activeSubSect = $("#social");
         }
         $activeSubSect.toggleClass("active"); //add to new
         $toHide.fadeOut(63, function() {
@@ -85,6 +85,7 @@ $(document).ready(function() {
           $activeSect.css("border-bottom", "2px solid black");
           let $toShow = $sectDivDict[$activeSect.attr("id")];
           let $toShowSS = $subSectDivDict[$activeSubSect.attr("id")];
+          resizeFonts();
           $toShow.fadeIn(63, function() {
             $toShowSS.slideDown(63);
           });
@@ -116,13 +117,13 @@ $(document).ready(function() {
 
 //resize elements on window size change
 $(window).resize(function() {
-  resize();
+  //resize();
 });
 
 //element sizing
 function resize() {
   //define new base sizes per new window width
-  let titleWidth = (window.innerWidth/1.42) + "px";
+  let titleWidth = (window.innerWidth/1.06) + "px";
   let titleWidthInt = parseInt(titleWidth);
   let titleHeight = (titleWidthInt/9.5) + "px";
   let titleFontSize = (titleWidthInt/8) + "px";
@@ -158,9 +159,8 @@ function resize() {
 }
 
 function resizeFonts() {
-  let titleWidth = (window.innerWidth/1.42);
-  let subSectFontShow = (titleWidth/27.5);
-  let subSectFontHide = (titleWidth/35.5);
+  let subSectFontShow = 18;
+  let subSectFontHide = 12;
   $(".headerP").each(function() {
     if ($(this).parent().hasClass("active")) {
       $(this).css("font-size", (subSectFontShow + "px"))
