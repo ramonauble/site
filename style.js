@@ -28,7 +28,14 @@ $(document).ready(function() {
   $(".subSectC").hide();
   $subSectDivDict[$activeSubSect.attr("id")].show();
 
-  resize();
+  let windowWidth = parseFloat(window.innerWidth);
+  let titleWidth = $(".inner").width();
+  if (windowWidth > 610) {
+    titleWidth = 580;
+  } else {
+    titleWidth = titleWidth/1.03;
+  }
+  resize(titleWidth);
 
 //────────────────────────────────────────────────
 //configure event handlers for section selection
@@ -85,7 +92,7 @@ $(document).ready(function() {
           $activeSect.css("border-bottom", "2px solid black");
           let $toShow = $sectDivDict[$activeSect.attr("id")];
           let $toShowSS = $subSectDivDict[$activeSubSect.attr("id")];
-          resizeFonts();
+          resizeFonts(titleWidth);
           $toShow.fadeIn(63, function() {
             $toShowSS.slideDown(63);
           });
@@ -102,7 +109,7 @@ $(document).ready(function() {
         $activeSubSect = $this;
         $activeSubSect.toggleClass("active"); //add to new
         $toHide.slideUp(63, function() {
-          resizeFonts();
+          resizeFonts(titleWidth);
           let $toShow = $subSectDivDict[$activeSubSect.attr("id")];
           $toShow.slideDown(63);
         });
@@ -121,56 +128,54 @@ $(window).resize(function() {
 });
 
 //element sizing
-function resize() {
+function resize(titleWidth) {
   //define new base sizes per new window width
-  let titleWidth = (window.innerWidth/1.06) + "px";
-  let titleWidthInt = parseInt(titleWidth);
-  let titleHeight = (titleWidthInt/9.5) + "px";
-  let titleFontSize = (titleWidthInt/8) + "px";
-  let subSectFontShow = (titleWidthInt/27.5) + "px";
-  let subSectFontHide = (titleWidthInt/33.5) + "px";
+  let windowWidth = parseFloat(window.innerWidth);
+  let titleHeight = (titleWidth/9.5) + "px";
+  let titleFontSize = (titleWidth/8) + "px";
 
   //resize name
-  $(".name").css("width", titleWidth)
+  $(".name").css("width", (titleWidth + "px"))
             .css("height", titleHeight)
             .css("line-height", titleHeight)
             .css("font-size", titleFontSize)
             .css("margin", "2px auto 0px");
 
   //resize accent canvas
-  $("#accentCanv").css("width", parseInt(titleWidth)/1.145);
+  $("#accentCanv").width((titleWidth/1.105) + "px")
+                .css("margin", "0 auto");
 
   //resize section selection div
-  $("#sectDiv").css("width", titleWidth)
+  $("#sectDiv").width(titleWidth)
               .css("margin", "0 auto");
 
   //resize section selectors
-  $(".sect").css("width", titleWidthInt/3.5)
-            .css("font-size", titleWidthInt/33.5);
+  $(".sect").width($("#accentCanv").width()/3.08)
+            .css("font-size", titleWidth/33.5 + "px");
 
   //resize selected content container
-  $(".infoDiv").css("width", titleWidthInt*(6/7))
-              .css("margin", "0 auto");
+  $(".infoDiv").css("width", $("#accentCanv").width()/1.025)
+              .css("margin", "5px auto 0px");
 
   //resize content within container
-  resizeFonts();
-  $(".contentP").css("font-size", (titleWidthInt/32.5) + "px")
+  resizeFonts(titleWidth);
+  $(".contentP").css("font-size", (titleWidth/32.5) + "px")
               .css("margin", "0 auto");
 }
 
-function resizeFonts() {
-  let subSectFontShow = 18;
-  let subSectFontHide = 12;
+function resizeFonts(titleWidth) {
+  let subSectFontShow = titleWidth/23.5;
+  let subSectFontHide = titleWidth/31.5;
   $(".headerP").each(function() {
     if ($(this).parent().hasClass("active")) {
       $(this).css("font-size", (subSectFontShow + "px"))
                   .css("margin", "0 auto");
-      $(this).parent().css("height", ((subSectFontShow + 12) + "px"))
+      $(this).parent().css("height", ((subSectFontShow + 16) + "px"))
                   .css("margin", "0 auto");
     } else {
       $(this).css("font-size", (subSectFontHide + "px"))
                   .css("margin", "0 auto");
-      $(this).parent().css("height", ((subSectFontHide + 12) + "px"))
+      $(this).parent().css("height", ((subSectFontHide + 16) + "px"))
                   .css("margin", "0 auto");
     }
   });
