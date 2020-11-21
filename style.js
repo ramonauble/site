@@ -144,6 +144,8 @@ function resize(titleWidth) {
   //resize accent canvas
   $("#accentCanv").width((titleWidth/1.105) + "px")
                 .css("margin", "0 auto");
+  $("#accentCanv")[0].width = $("#accentCanv").width();
+  $("#accentCanv")[0].height = $("#accentCanv").height();
 
   //resize section selection div
   $("#sectDiv").width(titleWidth)
