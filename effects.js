@@ -7,12 +7,11 @@ $(document).ready(function() {
   var lastUpdate;
 
   function animateCanvas(timestamp) {
-    if (lastUpdate == undefined || (timestamp - lastUpdate) > 100) {
+    if (lastUpdate == undefined || (timestamp - lastUpdate) > 66) {
       lastUpdate = timestamp;
-      for (let rectX = 0; rectX < (canvWidth*2); rectX += 5) {
+      for (let rectX = 0; rectX < (canvWidth*4); rectX += 2) {
         bgState = Math.random();
-        let rectY = 0 + (4*Math.floor((rectX/canvWidth)));
-        console.log(rectY);
+        let rectY = 0 + (2*Math.floor((rectX/canvWidth)));
         if (bgState < .1667) {
           accentCanvCtx.fillStyle = "#EED0E6";
         } else if (bgState < .3333) {
