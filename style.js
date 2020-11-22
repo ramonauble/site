@@ -147,10 +147,6 @@ function resize(titleWidth) {
   $("#accentCanv")[0].width = $("#accentCanv").width();
   $("#accentCanv")[0].height = $("#accentCanv").height();
 
-  //resize section selection div
-  $("#sectDiv").width(titleWidth)
-              .css("margin", "0 auto");
-
   //resize section selectors
   $(".sect").width($("#accentCanv").width()/3.08)
             .css("font-size", titleWidth/30.5 + "px")
