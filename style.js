@@ -164,8 +164,8 @@ function resize(titleWidth) {
   $(".contentP").css("font-size", (titleWidth/32.5) + "px")
               .css("margin", "0 auto");
 
-  $(".linkImg").width($accentCanv.width()/9)
-              .height($accentCanv.width()/9);
+  $(".linkImg").width($accentCanv.width()/7.5)
+              .height($accentCanv.width()/7.5);
 }
 
 function resizeFonts(titleWidth) {
