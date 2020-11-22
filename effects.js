@@ -1,25 +1,32 @@
 $(document).ready(function() {
   var $accentCanv = $("#accentCanv");
   var accentCanvCtx = $accentCanv[0].getContext("2d");
-  var accentCanvWidth = accentCanvCtx.canvas.clientWidth;
-  var accentCanvHeight = accentCanvCtx.canvas.clientHeight;
+  var canvWidth = accentCanvCtx.canvas.clientWidth;
+  var canvHeight = accentCanvCtx.canvas.clientHeight;
   var bgState = 0;
   var lastUpdate;
 
-  console.log(accentCanvWidth);
-  console.log(accentCanvHeight);
-
   function animateCanvas(timestamp) {
-    if (lastUpdate == undefined || (timestamp - lastUpdate) > 1000) {
+    if (lastUpdate == undefined || (timestamp - lastUpdate) > 100) {
       lastUpdate = timestamp;
-      if (bgState == 0) {
-        accentCanvCtx.fillStyle = "#FFFFFF";
-        accentCanvCtx.fillRect(0, 0, accentCanvWidth, accentCanvHeight);
-        bgState = 1;
-      } else {
-        accentCanvCtx.fillStyle = "#000000";
-        accentCanvCtx.fillRect(0, 0, accentCanvWidth, accentCanvWidth);
-        bgState = 0;
+      for (let rectX = 0; rectX < (canvWidth*2); rectX += 5) {
+        bgState = Math.random();
+        let rectY = 0 + (4*Math.floor((rectX/canvWidth)));
+        console.log(rectY);
+        if (bgState < .1667) {
+          accentCanvCtx.fillStyle = "#EED0E6";
+        } else if (bgState < .3333) {
+          accentCanvCtx.fillStyle = "#D8B9D0";
+        } else if (bgState < .5) {
+          accentCanvCtx.fillStyle = "#BB94B0";
+        } else if (bgState < .6667) {
+          accentCanvCtx.fillStyle = "#966F8B";
+        } else if (bgState < .8333) {
+          accentCanvCtx.fillStyle = "#604559";
+        } else {
+          accentCanvCtx.fillStyle = "#4a3946";
+        }
+        accentCanvCtx.fillRect(rectX%(canvWidth + 5), rectY, 5, canvHeight);
       }
     }
     window.requestAnimationFrame(animateCanvas);
