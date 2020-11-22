@@ -2,6 +2,26 @@ body {
   font-size:100%;
 }
 
+a:link {
+	background-color: transparent;
+	text-decoration: none;
+}
+
+a:visited {
+	background-color: transparent;
+	text-decoration: none;
+}
+
+a:hover {
+	background-color: transparent;
+	text-decoration: none;
+}
+
+a:active {
+	background-color: transparent;
+	text-decoration: none;
+}
+
 .pageBorder {
   left:0;
   right:0;
@@ -92,6 +112,9 @@ body {
     }
     .subSect:first-child {
       border-radius:6px 6px 0px 0px;
+    }
+    .linkImg {
+      padding:9px 6px;
     }
     #aboutP {
       padding:0px 0px 0px;

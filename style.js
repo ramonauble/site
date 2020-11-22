@@ -22,6 +22,7 @@ $(document).ready(function() {
     skills: $("#skillsDiv"),
     interests: $("#interestsDiv"),
     webDesign: $("#webDesignDiv"),
+    profess: $("#professDiv"),
     social: $("#socialDiv")
   };
   $activeSubSect.toggleClass("active");
@@ -84,7 +85,7 @@ $(document).ready(function() {
         } else if ($activeSect.attr("id") == "works") {
           $activeSubSect = $("#webDesign");
         } else {
-          $activeSubSect = $("#social");
+          $activeSubSect = $("#profess");
         }
         $activeSubSect.toggleClass("active"); //add to new
         $toHide.fadeOut(63, function() {
@@ -134,6 +135,8 @@ function resize(titleWidth) {
   let titleHeight = (titleWidth/9.5) + "px";
   let titleFontSize = (titleWidth/8) + "px";
 
+  let $accentCanv = $("#accentCanv");
+
   //resize name
   $(".name").css("width", (titleWidth + "px"))
             .css("height", titleHeight)
@@ -142,24 +145,27 @@ function resize(titleWidth) {
             .css("margin", "2px auto 0px");
 
   //resize accent canvas
-  $("#accentCanv").width((titleWidth/1.105) + "px")
+  $accentCanv.width((titleWidth/1.105) + "px")
                 .css("margin", "0 auto");
-  $("#accentCanv")[0].width = $("#accentCanv").width();
-  $("#accentCanv")[0].height = $("#accentCanv").height();
+  $accentCanv[0].width = $accentCanv.width();
+  $accentCanv[0].height = $accentCanv.height();
 
   //resize section selectors
-  $(".sect").width($("#accentCanv").width()/3.08)
+  $(".sect").width($accentCanv.width()/3.08)
             .css("font-size", titleWidth/30.5 + "px")
             .height(titleWidth/23.5);
 
   //resize selected content container
-  $(".infoDiv").css("width", $("#accentCanv").width()/1.025)
+  $(".infoDiv").css("width", $accentCanv.width()/1.025)
               .css("margin", "5px auto 0px");
 
   //resize content within container
   resizeFonts(titleWidth);
   $(".contentP").css("font-size", (titleWidth/32.5) + "px")
               .css("margin", "0 auto");
+
+  $(".linkImg").width($accentCanv.width()/9)
+              .height($accentCanv.width()/9);
 }
 
 function resizeFonts(titleWidth) {
