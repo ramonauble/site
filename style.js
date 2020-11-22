@@ -30,10 +30,10 @@ $(document).ready(function() {
 
   let windowWidth = parseFloat(window.innerWidth);
   let titleWidth = $(".inner").width();
-  if (windowWidth > 610) {
-    titleWidth = 580;
+  if (windowWidth > 696) {
+    titleWidth = 666;
   } else {
-    titleWidth = titleWidth/1.03;
+    titleWidth = titleWidth/1.01;
   }
   resize(titleWidth);
 
@@ -153,7 +153,8 @@ function resize(titleWidth) {
 
   //resize section selectors
   $(".sect").width($("#accentCanv").width()/3.08)
-            .css("font-size", titleWidth/33.5 + "px");
+            .css("font-size", titleWidth/30.5 + "px")
+            .height(titleWidth/23.5);
 
   //resize selected content container
   $(".infoDiv").css("width", $("#accentCanv").width()/1.025)

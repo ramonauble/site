@@ -70,6 +70,7 @@ body {
   .subSect {
     background-color:#cfabc5;
     margin:0 auto;
+    user-select:none;
   }
   .subSectC {
     box-sizing:border-box;
