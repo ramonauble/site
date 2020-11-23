@@ -7,14 +7,14 @@ $(document).ready(function() {
   var lastUpdate;
 
   var updateTime = 33; //period of new canvas frames in ms
-  var canvMult = 4; //number of full passes made over the canvas width
+  var canvMult = 16; //number of full passes made over the canvas width
   var rectWidth = 3;
 
   $(".sect, .subSect").mouseup(function() {
     $this = $(this);
-    updateTime = (12 + (188 * Math.random()));
-    rectWidth = (1 + Math.floor(3 * Math.random()));
-    canvMult = Math.ceil(8*Math.random());
+    updateTime = (12 + (88 * Math.random()));
+    rectWidth = Math.ceil(4 * Math.random());
+    canvMult = Math.ceil(16*Math.random());
   });
 
   function animateCanvas(timestamp) {
