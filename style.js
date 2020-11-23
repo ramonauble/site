@@ -40,41 +40,10 @@ $(document).ready(function() {
 
 //────────────────────────────────────────────────
 //configure event handlers for section selection
-//────────────────────────────────────────────────
-  //stop queued animations & animate bg color of
-  //most recently entered element
-  $(".sect, .subSect").mouseenter(function() {
-    let $this = $(this);
-    $this.stop(true, true);
-    if ($this.hasClass("sect")) {
-      $this.animate({
-        backgroundColor: "#BB94B0"}, 63);
-    } else {
-      $this.animate({
-        backgroundColor: "#bd86ae"}, 63);
-    }
-  })
-  //stop queued animations & animate bg color of
-  //most recently exited element
-  .mouseleave(function() {
-    let $this = $(this);
-    $this.stop(true, true);
-    if($this.hasClass("sect")) {
-      $this.animate({
-        backgroundColor: "#EED0E6"}, 63);
-    } else {
-      if ($this.hasClass("active")) {
-        $this.animate({
-          backgroundColor: "#c497b8"}, 63);
-      } else {
-        $this.animate({
-          backgroundColor: "#cfabc5"}, 63);
-      }
-    }
-  })
+//───────────────────────────────────────────────
   //stop queued animations & animate bg color of
   //most recently clicked element
-  .mousedown(function() {
+  $(".sect, .subSect").mousedown(function() {
     let $this = $(this);
     $this.stop(true, true);
     $this.animate({
@@ -112,7 +81,7 @@ $(document).ready(function() {
       $(this).stop(true, true);
       //animate bg color of newly deselected element
       $activeSect.animate({
-        backgroundColor: "#BB94B0"}, 63);
+        backgroundColor: "#EED0E6"}, 63);
     } else {
       if($this.attr("id") != $activeSubSect.attr("id")) {
         let $toHide = $subSectDivDict[$activeSubSect.attr("id")];
@@ -127,8 +96,6 @@ $(document).ready(function() {
       }
       $(this).stop(true, true);
       //animate bg color of newly deselected element
-      $activeSubSect.animate({
-        backgroundColor: "#bd86ae"}, 63);
     }
   });
 });
@@ -187,13 +154,15 @@ function resizeFonts(titleWidth) {
                   .css("margin", "0 auto");
       $(this).parent().css("height", ((subSectFontShow + 16) + "px"))
                   .css("margin", "0 auto")
-                  .css("background", "#c497b8");
+                  .animate({
+                    backgroundColor: "#c497b8"}, 63);
     } else {
       $(this).css("font-size", (subSectFontHide + "px"))
                   .css("margin", "0 auto");
       $(this).parent().css("height", ((subSectFontHide + 16) + "px"))
                   .css("margin", "0 auto")
-                  .css("background", "#cfabc5");
+                  .animate({
+                    backgroundColor: "#cfabc5"}, 63);
     }
   });
 }
