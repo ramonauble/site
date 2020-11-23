@@ -57,6 +57,7 @@ a:active {
   text-align:center;
   margin:0 auto;
   font-family:monospace;
+  text-decoration:underline;
 }
 
 #accentCanv {
