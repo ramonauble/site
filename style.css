@@ -118,6 +118,9 @@ a:active {
     .linkImg {
       padding:6px 6px;
     }
+    .lissImg {
+      padding:6px 6px;
+    }
     #aboutP {
       padding:0px 0px 0px;
     }
@@ -140,6 +143,6 @@ a:active {
       #jqui, #vue {
         font-weight:666;
       }
-      #divider {
+      .divider {
         font-weight:1000;
       }
