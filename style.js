@@ -46,8 +46,13 @@ $(document).ready(function() {
   $(".sect, .subSect").mouseenter(function() {
     let $this = $(this);
     $this.stop(true, true);
-    $this.animate({
-      backgroundColor: "#BB94B0"}, 63);
+    if ($this.hasClass("sect")) {
+      $this.animate({
+        backgroundColor: "#BB94B0"}, 63);
+    } else {
+      $this.animate({
+        backgroundColor: "#bd86ae"}, 63);
+    }
   })
   //stop queued animations & animate bg color of
   //most recently exited element
@@ -58,8 +63,13 @@ $(document).ready(function() {
       $this.animate({
         backgroundColor: "#EED0E6"}, 63);
     } else {
-      $this.animate({
-        backgroundColor: "#cfabc5"}, 63);
+      if ($this.hasClass("active")) {
+        $this.animate({
+          backgroundColor: "#c497b8"}, 63);
+      } else {
+        $this.animate({
+          backgroundColor: "#cfabc5"}, 63);
+      }
     }
   })
   //stop queued animations & animate bg color of
@@ -118,7 +128,7 @@ $(document).ready(function() {
       $(this).stop(true, true);
       //animate bg color of newly deselected element
       $activeSubSect.animate({
-        backgroundColor: "#CFABC5"}, 63);
+        backgroundColor: "#bd86ae"}, 63);
     }
   });
 });
@@ -176,12 +186,14 @@ function resizeFonts(titleWidth) {
       $(this).css("font-size", (subSectFontShow + "px"))
                   .css("margin", "0 auto");
       $(this).parent().css("height", ((subSectFontShow + 16) + "px"))
-                  .css("margin", "0 auto");
+                  .css("margin", "0 auto")
+                  .css("background", "#c497b8");
     } else {
       $(this).css("font-size", (subSectFontHide + "px"))
                   .css("margin", "0 auto");
       $(this).parent().css("height", ((subSectFontHide + 16) + "px"))
-                  .css("margin", "0 auto");
+                  .css("margin", "0 auto")
+                  .css("background", "#cfabc5");
     }
   });
 }
