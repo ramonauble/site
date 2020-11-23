@@ -145,7 +145,7 @@ function resize(titleWidth) {
             .css("margin", "2px auto 0px");
 
   //resize accent canvas
-  $accentCanv.width((titleWidth/1.105) + "px")
+  $accentCanv.width((titleWidth/1.025) + "px")
                 .css("margin", "0 auto");
   $accentCanv[0].width = $accentCanv.width();
   $accentCanv[0].height = $accentCanv.height();
@@ -153,7 +153,7 @@ function resize(titleWidth) {
   //resize section selectors
   $(".sect").width($accentCanv.width()/3.08)
             .css("font-size", titleWidth/30.5 + "px")
-            .height(titleWidth/23.5);
+            .height(titleWidth/19.5);
 
   //resize selected content container
   $(".infoDiv").css("width", $accentCanv.width()/1.025)
@@ -161,7 +161,7 @@ function resize(titleWidth) {
 
   //resize content within container
   resizeFonts(titleWidth);
-  $(".contentP").css("font-size", (titleWidth/32.5) + "px")
+  $(".contentP").css("font-size", (titleWidth/30.5) + "px")
               .css("margin", "0 auto");
 
   $(".linkImg").width($accentCanv.width()/7.5)
@@ -169,8 +169,8 @@ function resize(titleWidth) {
 }
 
 function resizeFonts(titleWidth) {
-  let subSectFontShow = titleWidth/23.5;
-  let subSectFontHide = titleWidth/31.5;
+  let subSectFontShow = titleWidth/21.5;
+  let subSectFontHide = titleWidth/29.5;
   $(".headerP").each(function() {
     if ($(this).parent().hasClass("active")) {
       $(this).css("font-size", (subSectFontShow + "px"))
