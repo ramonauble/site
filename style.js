@@ -96,6 +96,8 @@ $(document).ready(function() {
       }
       $(this).stop(true, true);
       //animate bg color of newly deselected element
+      $activeSubSect.animate({
+        backgroundColor: "#c497b8"}, 63);
     }
   });
 });
@@ -142,6 +144,8 @@ function resize(titleWidth) {
               .css("margin", "0 auto");
 
   $(".linkImg").width($accentCanv.width()/7.5)
+              .height($accentCanv.width()/7.5);
+  $(".lissImg").width($accentCanv.width()/7.5)
               .height($accentCanv.width()/7.5);
 }
 
