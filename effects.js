@@ -12,9 +12,8 @@ $(document).ready(function() {
 
   $(".sect, .subSect").mouseup(function() {
     $this = $(this);
-    updateTime = (12 + (88 * Math.random()));
-    rectWidth = Math.ceil(4 * Math.random());
-    canvMult = Math.ceil(16*Math.random());
+    updateTime = Math.ceil((12 + (138 * Math.random())));
+    rectWidth = Math.ceil(12 * Math.random());
   });
 
   function animateCanvas(timestamp) {
@@ -24,9 +23,9 @@ $(document).ready(function() {
         bgState = Math.random();
         let rectY = (2*Math.floor((rectX/canvWidth)));
         if (bgState < .1667) {
-          accentCanvCtx.fillStyle = "#EED0E6";
+          accentCanvCtx.fillStyle = "#ffe3e3";
         } else if (bgState < .3333) {
-          accentCanvCtx.fillStyle = "#D8B9D0";
+          accentCanvCtx.fillStyle = "#ffcfcf";
         } else if (bgState < .5) {
           accentCanvCtx.fillStyle = "#BB94B0";
         } else if (bgState < .6667) {
@@ -36,7 +35,7 @@ $(document).ready(function() {
         } else {
           accentCanvCtx.fillStyle = "#4a3946";
         }
-        accentCanvCtx.fillRect(rectX%(canvWidth + 5), rectY, rectWidth, canvHeight);
+        accentCanvCtx.fillRect(rectX%(canvWidth + rectWidth), rectY, rectWidth, canvHeight);
       }
     }
     window.requestAnimationFrame(animateCanvas);
