@@ -142,11 +142,11 @@ function resize(titleWidth) {
             .css("height", titleHeight)
             .css("line-height", titleHeight)
             .css("font-size", titleFontSize)
-            .css("margin", "2px auto 0px");
+            .css("margin", "9px auto 0px");
 
   //resize accent canvas
   $accentCanv.width((titleWidth/1.025) + "px")
-                .css("margin", "0 auto");
+                .css("margin", "6px auto 0px");
   $accentCanv[0].width = $accentCanv.width();
   $accentCanv[0].height = $accentCanv.height();
 
