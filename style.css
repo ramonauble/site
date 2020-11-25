@@ -3,23 +3,27 @@ body {
 }
 
 a:link {
+  color:#4a3946;
 	background-color: transparent;
-	text-decoration: none;
 }
 
 a:visited {
+  color:#594a56;
 	background-color: transparent;
-	text-decoration: none;
 }
 
 a:hover {
+  color:#593f53;
 	background-color: transparent;
-	text-decoration: none;
 }
 
 a:active {
+  color:#75496b;
 	background-color: transparent;
-	text-decoration: none;
+}
+
+.link {
+  text-decoration: none;
 }
 
 .pageBorder {
@@ -123,6 +127,9 @@ a:active {
     }
     #aboutP {
       padding:0px 0px 0px;
+    }
+    #lissap {
+      display:inline-block;
     }
       #html, #css, #javascript, #jquery,
       #gpu, #workers, #audio, #webgl {
